@@ -2,6 +2,9 @@
 
 namespace Cadeira;
 
+use GetSet;
+use MetodoInacessivel;
+
 class CadeiraArtDeco{
 
     private string $nome;
@@ -11,8 +14,9 @@ class CadeiraArtDeco{
     public const MODELO = "Art Deco"; 
 
     /**
+     * Construtor (Magic Methods)
      * 
-     * 
+     * @return void
      */
     function __construct(string $nome, float $preco)
     {
@@ -23,45 +27,33 @@ class CadeiraArtDeco{
 
     }
 
+    /**
+     * Retorna o nome
+     * 
+     * @return string
+     */
     public function getNome() : string
     {
-        return "";
+
+        return $this->nome;
+
     }
 
+    /**
+     * Retorna o preço
+     * 
+     * @return float
+     */
     public function getPreco() : float
     {
-        return "";
+
+        return $this->preco;
+
     }
 
-    public function __call($name, $arguments)
-    {
-        
-    }
+    use MetodoInacessivel;
 
-    static public function __callStatic($name, $arguments)
-    {
-        
-    }
-
-    public function __get($name)
-    {
-        
-    }
-
-    public function __set($name, $value)
-    {
-        
-    }
-
-    public function __isset($name)
-    {
-        
-    }
-
-    public function __unset($name)
-    {
-        
-    }
+    use GetSet;
 
     public function __sleep()
     {
@@ -114,6 +106,9 @@ class CadeiraArtDeco{
     }
 
 }
+
+$cadeira = new CadeiraArtDeco("Teste", 100);
+
 
 
 ?>
