@@ -3,7 +3,10 @@
 namespace Cadeira;
 
 use GetSet;
+
 use MetodoInacessivel;
+
+use Modelo;
 
 class CadeiraArtDeco{
 
@@ -11,7 +14,7 @@ class CadeiraArtDeco{
 
     private float $preco;
 
-    public const MODELO = "Art Deco"; 
+    private Modelo $modelo; 
 
     /**
      * Construtor (Magic Methods)
@@ -106,9 +109,5 @@ class CadeiraArtDeco{
     }
 
 }
-
-$cadeira = new CadeiraArtDeco("Teste", 100);
-
-
 
 ?>
